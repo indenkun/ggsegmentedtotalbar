@@ -1,7 +1,7 @@
 Package: ggsegmentedtotalbar
 Type: Package
 Title: Create a Segmented Total Bar Plot with Custom Annotations and Labels
-Version: 0.1.0
+Version: 0.1.0.9000
 Authors@R: person(given = "Ozancan",
                   family = "Ozdemir",
                   role = c("aut", "cre"),
