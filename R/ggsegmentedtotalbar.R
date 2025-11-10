@@ -25,6 +25,8 @@ utils::globalVariables(".data")
 #' @param total_vjust Numeric. adjust the alignment of total values labels. Default is -0.5.
 #' @param label_size Numeric. Text size for the labels. Default is 4.
 #' @param label_color A string specifying the color of the labels. Default is "black".
+#' @param reoder Logical. If `TRUE`, sort by total value in ascending or descending order. The sorting behavior is specified in .desc.
+#' @param .desc Logical. If `TRUE`, sort in descending order by total value.
 #' @param show_total_legend If `TRUE`, add a legend showing the total.
 #' @param name_total_legend A string specifying as the item name when adding a total to the legend. Default is "TOTAL".
 #'
@@ -44,6 +46,7 @@ utils::globalVariables(".data")
 ggsegmentedtotalbar <- function(df, group, segment, value, total,
                                 alpha = 0.3, color = "lightgrey",
                                 label = FALSE, label_size = 4, label_color = "black",
+                                reoder = TRUE, .desc = TRUE) {
                                 show_total_legend = FALSE, name_total_legend = "TOTAL") {
                                 alpha = 0.3, color = "lightgrey", border_color = "black",
                                 label = FALSE, label_size = 4, label_color = "black") {
@@ -53,7 +56,8 @@ ggsegmentedtotalbar <- function(df, group, segment, value, total,
                                 label_size = 4, label_color = "black") {
 
   # Order group variable by total value
-  df[[group]] <- forcats::fct_reorder(df[[group]], df[[total]], .fun = max, .desc = TRUE)
+  if(reoder) df[[group]] <- forcats::fct_reorder(df[[group]], df[[total]], .fun = max, .desc = .desc)
+  else if(!is.factor(df[[group]])) df[[group]] <- as.factor(df[[group]])
 
   y_max <- max(df[[value]], df[[total]], na.rm = TRUE)
   y_min <- min(df[[value]], df[[total]], na.rm = TRUE)

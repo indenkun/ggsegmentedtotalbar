@@ -20,6 +20,8 @@ ggsegmentedtotalbar(
   total_vjust = -0.5,
   label_size = 4,
   label_color = "black",
+  reoder = TRUE,
+  .desc = TRUE
   show_total_legend = FALSE,
   name_total_legend = "TOTAL"
 )
@@ -54,6 +56,9 @@ ggsegmentedtotalbar(
 
 \item{label_color}{A string specifying the color of the labels. Default is "black".}
 
+\item{reoder}{Logical. If `TRUE`, sort by total value in ascending or descending order. The sorting behavior is specified in .desc.}
+
+\item{.desc}{Logical. If `TRUE`, sort in descending order by total value.}
 \item{show_total_legend}{If `TRUE`, add a legend showing the total.}
 
 \item{name_total_legend}{A string specifying as the item name when adding a total to the legend. Default is "TOTAL".}
