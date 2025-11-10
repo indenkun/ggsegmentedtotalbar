@@ -11,7 +11,7 @@ bar plot in R.
 You can install the development version of ggsegmentedtotalbar like so:
 
 ``` r
-remotes::install_github("indenkun/ggsegmentedtoralbar", "dev")
+remotes::install_github("indenkun/ggsegmentedtotalbar", ref = "dev")
 ```
 
 ## Details

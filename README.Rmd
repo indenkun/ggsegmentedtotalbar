@@ -22,7 +22,7 @@ It is the first ggplot2-based R package to create the segmented total bar plot i
 You can install the development version of ggsegmentedtotalbar like so:
 
 ``` r
-remotes::install_github("indenkun/ggsegmentedtoralbar", "dev")
+remotes::install_github("indenkun/ggsegmentedtotalbar", ref = "dev")
 ```
 
 ## Details 
