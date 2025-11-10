@@ -14,16 +14,16 @@ ggsegmentedtotalbar(
   color = "lightgrey",
   border_color = "black",
   label = FALSE,
-  value_label = FALSE,
-  total_label = value_label,
-  value_vjust = -0.3,
-  total_vjust = -0.5,
   label_size = 4,
   label_color = "black",
   reoder = TRUE,
-  .desc = TRUE
+  .desc = TRUE,
   show_total_legend = FALSE,
-  name_total_legend = "TOTAL"
+  name_total_legend = "TOTAL",
+  value_label = FALSE,
+  total_label = value_label,
+  value_vjust = -0.3,
+  total_vjust = -0.5
 )
 }
 \arguments{
@@ -44,13 +44,6 @@ ggsegmentedtotalbar(
 \item{border_color}{A string specifying the border color of the background boxes. Default is "black".}
 
 \item{label}{Logical. If `TRUE`, adds labels showing total values above the boxes and value labels on each segment. Default is `FALSE`.}
-\item{value_label}{Logical. If `TRUE`, adds labels showing values on each segment. Default is `FALSE`.}
-
-\item{total_label}{Logical. If `TRUE`, adds labels showing total values above the boxes. Default is same as `value_lavel`.}
-
-\item{value_vjust}{Numeric. adjust the alignment of values labels. Default is -0.3.}
-
-\item{total_vjust}{Numeric. adjust the alignment of total values labels. Default is -0.5.}
 
 \item{label_size}{Numeric. Text size for the labels. Default is 4.}
 
@@ -59,9 +52,18 @@ ggsegmentedtotalbar(
 \item{reoder}{Logical. If `TRUE`, sort by total value in ascending or descending order. The sorting behavior is specified in .desc.}
 
 \item{.desc}{Logical. If `TRUE`, sort in descending order by total value.}
+
 \item{show_total_legend}{If `TRUE`, add a legend showing the total.}
 
 \item{name_total_legend}{A string specifying as the item name when adding a total to the legend. Default is "TOTAL".}
+
+\item{value_label}{Logical. If `TRUE`, adds labels showing values on each segment. Default is `FALSE`.}
+
+\item{total_label}{Logical. If `TRUE`, adds labels showing total values above the boxes. Default is same as `value_lavel`.}
+
+\item{value_vjust}{Numeric. adjust the alignment of values labels. Default is -0.3.}
+
+\item{total_vjust}{Numeric. adjust the alignment of total values labels. Default is -0.5.}
 }
 \value{
 A ggplot object displaying the segmented bar plot with optional annotations and labels.

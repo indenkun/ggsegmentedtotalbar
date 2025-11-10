@@ -44,16 +44,12 @@ utils::globalVariables(".data")
 #'
 #' @export
 ggsegmentedtotalbar <- function(df, group, segment, value, total,
-                                alpha = 0.3, color = "lightgrey",
-                                label = FALSE, label_size = 4, label_color = "black",
-                                reoder = TRUE, .desc = TRUE) {
-                                show_total_legend = FALSE, name_total_legend = "TOTAL") {
                                 alpha = 0.3, color = "lightgrey", border_color = "black",
-                                label = FALSE, label_size = 4, label_color = "black") {
-                                alpha = 0.3, color = "lightgrey",
+                                label = FALSE, label_size = 4, label_color = "black",
+                                reoder = TRUE, .desc = TRUE,
+                                show_total_legend = FALSE, name_total_legend = "TOTAL",
                                 value_label = FALSE, total_label = value_label,
-                                value_vjust = -0.3, total_vjust = -0.5,
-                                label_size = 4, label_color = "black") {
+                                value_vjust = -0.3, total_vjust = -0.5){
 
   if(missing(total)) {
     total_value <- sapply(unique(df[[group]]), function(x){sum(df[value][df[group] == x], na.rm = TRUE)})
